@@ -1,12 +1,19 @@
 {
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "type": "java",
-      "name": "Launch JavaFX App",
-      "request": "launch",
-      "mainClass": "Main",
-      "vmArgs": "--module-path \"C:\\javafx-sdk-21.0.9\\lib\" --add-modules javafx.controls,javafx.fxml"
-    }
-  ]
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "java",
+        "name": "Main",
+        "request": "launch",
+        "mainClass": "application.Main",
+        "projectName": "Student Record Management System_780d9cfd"
+      },
+      {
+        "type": "java",
+        "name": "Run JavaFX",
+        "request": "launch",
+        "mainClass": "Main",
+        "vmArgs": "--module-path \"C:/javafx-sdk-21/lib\" --add-modules javafx.controls,javafx.fxml"
+      }
+    ]
 }
