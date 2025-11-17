@@ -1,52 +1,58 @@
-/* package application;
+package application.UI.screens;
 
-import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.stage.Stage;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.StackPane;
+import application.Main;
+import application.UI.screens.LoginScene;
 
-public class Main extends Application {
-    @Override
-    public void start(Stage stage) {
+public class DashboardScene {
+    private Scene scene;
+
+    public DashboardScene() {
         Group root = new Group();
-        Scene scene = new Scene(root, 1300, 700, Color.web("#F9FAFB"));
+        scene = new Scene(root, 1300, 700, Color.web("#F9FAFB"));
 
-        Image icon = new Image("file:///C:/Users/Rain Sidney/OneDrive/Documents/BSIT College Files/2nd Year 1st Sem/OOP/Student Record Management System/Images/TUP Logo.png");
-
+        // Sidebar
         Rectangle sideBar = new Rectangle(0, 0, 200, 700);
         sideBar.setFill(Color.web("#4B4B4B"));
 
-        Image Logo = new Image("file:///C:/Users/Rain Sidney/OneDrive/Documents/BSIT College Files/2nd Year 1st Sem/OOP/Student Record Management System/Images/TUP Logo.png");
+        
+
+        // Logo (adjust path as needed)
+        Image Logo = new Image("file:///C:/Users/Rain Sidney/OneDrive/Documents/BSIT College Files/2nd Year 1st Sem/OOP/Student Record Management System/src/Images/TUP Logo.png");
         ImageView logoView = new ImageView(Logo);
         logoView.setX(12);
         logoView.setY(14);
         logoView.setFitWidth(42);
-        logoView.setFitHeight(42);  
+        logoView.setFitHeight(42);
         logoView.setPreserveRatio(true);
         logoView.setSmooth(true);
         logoView.setCache(false);
 
+        // Admin Portal Text
         Text text1 = new Text("Admin Portal");
         text1.setX(60);
         text1.setY(42);
         text1.setFont(Font.font("Inter", FontWeight.BOLD, 20));
         text1.setFill(Color.web("#F3F4F6"));
 
+        // Navbar
         Rectangle navBar = new Rectangle(200, 0, 1100, 70);
         navBar.setFill(Color.web("#FFFFFF"));
 
+        // Menu Icon (adjust path as needed)
         Image menu = new Image("file:///C:/Users/Rain Sidney/OneDrive/Documents/BSIT College Files/2nd Year 1st Sem/OOP/Student Record Management System/Images/Icons/Menu.png");
         ImageView menuView = new ImageView(menu);
         menuView.setX(208);
@@ -57,26 +63,29 @@ public class Main extends Application {
         menuView.setSmooth(true);
         menuView.setCache(false);
 
+        // TechnoDash Title
         Text text2 = new Text("TechnoDash");
         text2.setX(260);
         text2.setY(45);
         text2.setFont(Font.font("Inter", FontWeight.BOLD, 32));
         text2.setFill(Color.web("#111827"));
 
+        // Subtitle
         Text text3 = new Text("Executive Information System");
         text3.setX(260);
         text3.setY(58);
         text3.setFont(Font.font("Inter", FontWeight.LIGHT, 12));
         text3.setFill(Color.web("#333333"));
 
+        // Search Field with Icon
         TextField searchField = new TextField();
         searchField.setPromptText("Search...");
         searchField.setPrefWidth(370);
         searchField.setPrefHeight(35);
-        
+
         ImageView seaIcon = new ImageView(new Image("file:///C:/Users/Rain Sidney/OneDrive/Documents/BSIT College Files/2nd Year 1st Sem/OOP/Student Record Management System/Images/Icons/Search icon.png"));
-        seaIcon .setFitWidth(45);
-        seaIcon .setFitHeight(45);
+        seaIcon.setFitWidth(45);
+        seaIcon.setFitHeight(45);
 
         StackPane.setAlignment(seaIcon, Pos.CENTER_RIGHT);
         StackPane.setMargin(seaIcon, new Insets(0, 0, 0, 0)); // right padding
@@ -85,6 +94,7 @@ public class Main extends Application {
         searchContainer.setLayoutX(490);
         searchContainer.setLayoutY(14);
 
+        // Content Rectangles (placeholders)
         Rectangle undg = new Rectangle(218, 100, 255, 120);
         undg.setFill(Color.web("#FFFFFF"));
 
@@ -109,30 +119,25 @@ public class Main extends Application {
         Rectangle evnt = new Rectangle(625, 554, 385, 120);
         evnt.setFill(Color.web("#FFFFFF"));
 
-        root.getChildren().add(sideBar);
-        root.getChildren().add(logoView);
-        root.getChildren().add(text1);
-        root.getChildren().add(navBar);
-        root.getChildren().add(menuView);
-        root.getChildren().add(text2);
-        root.getChildren().add(text3);
-        root.getChildren().add(searchContainer);
-        root.getChildren().add(undg);
-        root.getChildren().add(grad);
-        root.getChildren().add(fcty);
-        root.getChildren().add(rate);
-        root.getChildren().add(stat);
-        root.getChildren().add(rank);
-        root.getChildren().add(crss);
-        root.getChildren().add(evnt);
+        // Logout Button (positioned in navbar)
+        Button logoutButton = new Button("Logout");
+        logoutButton.setLayoutX(1150);
+        logoutButton.setLayoutY(20);
+        logoutButton.setPrefWidth(100);
+        logoutButton.setPrefHeight(30);
+        logoutButton.setStyle("-fx-background-color: #E52949; -fx-text-fill: white; -fx-font-size: 12px;");
 
-        stage.getIcons().add(icon);
-        stage.setTitle("TUP-M SRMS");
-        stage.setResizable(false);
-        stage.setScene(scene);
-        stage.show();
+        logoutButton.setOnAction(e -> {
+            // Switch back to login scene
+            LoginScene loginScene = new LoginScene();
+            Main.switchScene(loginScene.getScene());
+        });
+
+        // Add all elements to root
+        root.getChildren().addAll(sideBar, logoView, text1, navBar, menuView, text2, text3, searchContainer, undg, grad, fcty, rate, stat, rank, crss, evnt, logoutButton);
     }
-    public static void main(String[] args) {
-        launch(args);
+
+    public Scene getScene() {
+        return scene;
     }
-} */
+}
