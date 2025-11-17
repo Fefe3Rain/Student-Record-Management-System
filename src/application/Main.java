@@ -37,6 +37,10 @@ public class Main extends Application {
         primaryStage.show();
     }
 
+    public static Stage getPrimaryStage() {
+        return primaryStage;
+    }
+    
     // Static method for other classes to switch scenes
     public static void switchScene(Scene newScene) {
         primaryStage.setScene(newScene);
