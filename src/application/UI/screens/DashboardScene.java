@@ -28,7 +28,16 @@ public class DashboardScene {
         Rectangle sideBar = new Rectangle(0, 0, 200, 700);
         sideBar.setFill(Color.web("#4B4B4B"));
 
-        
+        Button udgbut = new Button("undergraduate");
+        udgbut.setLayoutX(0);
+        udgbut.setLayoutY(160);
+        udgbut.setPrefWidth(200);
+        udgbut.setPrefHeight(35);
+
+        udgbut.setOnAction(e -> {
+            UGScene ugScene = new UGScene();
+            Main.switchScene(ugScene.getScene());
+        });
 
         // Logo (adjust path as needed)
         Image Logo = new Image("file:///C:/Users/Rain Sidney/OneDrive/Documents/BSIT College Files/2nd Year 1st Sem/OOP/Student Record Management System/src/Images/TUP Logo.png");
@@ -134,7 +143,7 @@ public class DashboardScene {
         });
 
         // Add all elements to root
-        root.getChildren().addAll(sideBar, logoView, text1, navBar, menuView, text2, text3, searchContainer, undg, grad, fcty, rate, stat, rank, crss, evnt, logoutButton);
+        root.getChildren().addAll(sideBar, udgbut, logoView, text1, navBar, menuView, text2, text3, searchContainer, undg, grad, fcty, rate, stat, rank, crss, evnt, logoutButton);
     }
 
     public Scene getScene() {
