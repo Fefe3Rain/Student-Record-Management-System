@@ -1,4 +1,4 @@
-package application;
+/* package application;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -83,14 +83,6 @@ public class Main extends Application {
         unField.setPrefHeight(45);
         unField.setPromptText("Juan Dela Cruz");
 
-        /*Image unIcon = new Image("file///C:/Users/Rain Sidney/OneDrive/Documents/BSIT College Files/2nd Year 1st Sem/OOP/Student Record Management System/Images/Icons/person.png");
-        ImageView unView = new ImageView(unIcon);
-        unView.setX(1200);
-        unView.setY(250);
-        unView.setPreserveRatio(true);
-        unView.setSmooth(true);
-        unView.setCache(false); */
-
         Text text5 = new Text("Password");
         text5.setX(900);
         text5.setY(340);
@@ -130,7 +122,6 @@ public class Main extends Application {
         root.getChildren().add(text3);
         root.getChildren().add(text4);
         root.getChildren().add(unField);
-        // root.getChildren().add(unView);
         root.getChildren().add(text5);
         root.getChildren().add(pwField);
         root.getChildren().add(text6);
@@ -147,3 +138,4 @@ public class Main extends Application {
         launch(args);
     }
 }
+*/
