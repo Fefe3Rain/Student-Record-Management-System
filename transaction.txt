@@ -1,1 +1,16 @@
-[2025-11-18T00:31:18.344105400] Student record submitted: Rian Sidney (BSIT)
+[2025-11-18T15:41:45.286784800] Student record submitted: Rain Sidney (BSIT)
+[2025-11-18T17:29:59.921807500] Faculty record submitted: Neilsky Niggrsky (Computer)
+[2025-11-18T17:32:50.268393100] Student record submitted: neily delily (BSIT)
+[2025-11-18T17:46:07.920156600] Student record submitted: danilsky anchetacakes (BSCS)
+[2025-11-18T22:18:55.864993300] Student record submitted: Neilsky Romero (BSIT)
+[2025-11-18T22:21:04.382880200] Student record updated: Praningsky Romero
+DELETED: TUPM-25-0002 at 2025-11-18T22:21:22.305934600
+[2025-11-18T22:21:30.690502500] Student record submitted: Praningsky Romero (BSIT)
+DELETED: TUPM-25-0003 at 2025-11-18T22:21:59.873942200
+[2025-11-18T22:34:36.748772700] Student record submitted: Neilsky Romero (BSIT)
+DELETED: TUPM-25-0004 at 2025-11-18T22:34:51.952298200
+[2025-11-18T22:38:27.425464900] Student record updated: Neilsky Romero
+[2025-11-18T22:38:28.746356700] Student record submitted: Neilsky Romero (BSIT)
+DELETED: TUPM-25-0005 at 2025-11-18T22:38:35.147965100
+[2025-11-18T22:44:06.796240] Student record submitted: hello nigga (BSIS)
+DELETED: TUPM-25-0006 at 2025-11-18T22:44:41.523981500

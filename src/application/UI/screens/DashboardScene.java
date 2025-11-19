@@ -14,7 +14,9 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+
 import application.Main;
+import application.UI.components.*;
 import application.UI.screens.LoginScene;
 
 public class DashboardScene {
@@ -25,68 +27,43 @@ public class DashboardScene {
         scene = new Scene(root, 1300, 700, Color.web("#F9FAFB"));
 
         // Sidebar
-        Rectangle sideBar = new Rectangle(0, 0, 200, 700);
-        sideBar.setFill(Color.web("#4B4B4B"));
+        CustomRectangle sideBar = new CustomRectangle(0, 0, 200, 700, Color.web("#4B4B4B"), null);
 
-        Button udgbut = new Button("undergraduate");
-        udgbut.setLayoutX(0);
-        udgbut.setLayoutY(160);
-        udgbut.setPrefWidth(200);
-        udgbut.setPrefHeight(35);
+        CustomButton udgbut = new CustomButton(0, 160, 200, 35, "Undergraduate", Color.web("#FFFFFF"));
+        udgbut.setStyle("-fx-background-color: #D9D9D9; -fx-text-fill: white; -fx-font-size: 23x;");
 
         udgbut.setOnAction(e -> {
             UGScene ugScene = new UGScene();
             Main.switchScene(ugScene.getScene());
         });
 
+        CustomButton facbut = new CustomButton(0, 224, 200, 35, "Faculty", Color.web("#FFFFFF"));
+        facbut.setStyle("-fx-background-color: #D9D9D9; -fx-text-fill: white; -fx-font-size: 23x;");
+
+        facbut.setOnAction(e -> {
+            FacultyScene faculty = new FacultyScene();
+            Main.switchScene(faculty.getScene());
+        });
+
         // Logo (adjust path as needed)
-        Image Logo = new Image("file:///C:/Users/Rain Sidney/OneDrive/Documents/BSIT College Files/2nd Year 1st Sem/OOP/Student Record Management System/src/Images/TUP Logo.png");
-        ImageView logoView = new ImageView(Logo);
-        logoView.setX(12);
-        logoView.setY(14);
-        logoView.setFitWidth(42);
-        logoView.setFitHeight(42);
-        logoView.setPreserveRatio(true);
-        logoView.setSmooth(true);
-        logoView.setCache(false);
+        CustomImageView logoView = new CustomImageView(12, 14, 42, 42, "file:///C:/Users/Rain Sidney/OneDrive/Documents/BSIT College Files/2nd Year 1st Sem/OOP/Student Record Management System/src/Images/TUP Logo.png", null);
 
         // Admin Portal Text
-        Text text1 = new Text("Admin Portal");
-        text1.setX(60);
-        text1.setY(42);
-        text1.setFont(Font.font("Inter", FontWeight.BOLD, 20));
-        text1.setFill(Color.web("#F3F4F6"));
+        CustomText text1 = new CustomText(60, 42, "Admin Portal", 18, FontWeight.BOLD, Color.web("#F3F4F6"));
 
         // Navbar
-        Rectangle navBar = new Rectangle(200, 0, 1100, 70);
-        navBar.setFill(Color.web("#FFFFFF"));
+        CustomRectangle navBar = new CustomRectangle(200, 0, 1100, 70, Color.web("#FFFFFF"), Color.DIMGRAY);
 
         // Menu Icon (adjust path as needed)
-        Image menu = new Image("file:///C:/Users/Rain Sidney/OneDrive/Documents/BSIT College Files/2nd Year 1st Sem/OOP/Student Record Management System/Images/Icons/Menu.png");
-        ImageView menuView = new ImageView(menu);
-        menuView.setX(208);
-        menuView.setY(10);
-        menuView.setFitWidth(53);
-        menuView.setFitHeight(53);
-        menuView.setPreserveRatio(true);
-        menuView.setSmooth(true);
-        menuView.setCache(false);
+        CustomImageView menuView = new CustomImageView(208, 10, 53, 53, "file:///C:/Users/Rain Sidney/OneDrive/Documents/BSIT College Files/2nd Year 1st Sem/OOP/Student Record Management System/Images/Icons/Menu.png", null);
 
         // TechnoDash Title
-        Text text2 = new Text("TechnoDash");
-        text2.setX(260);
-        text2.setY(45);
-        text2.setFont(Font.font("Inter", FontWeight.BOLD, 32));
-        text2.setFill(Color.web("#111827"));
+        CustomText text2 = new CustomText(260, 45, "TechnoDash", 32, FontWeight.BOLD, Color.web("#111827"));
 
         // Subtitle
-        Text text3 = new Text("Executive Information System");
-        text3.setX(260);
-        text3.setY(58);
-        text3.setFont(Font.font("Inter", FontWeight.LIGHT, 12));
-        text3.setFill(Color.web("#333333"));
+        CustomText text3 = new CustomText(260, 58, "Executive Information System", 12, FontWeight.LIGHT, Color.web("#333333"));
 
-        // Search Field with Icon
+        // Search Field with Icon      
         TextField searchField = new TextField();
         searchField.setPromptText("Search...");
         searchField.setPrefWidth(370);
@@ -143,7 +120,7 @@ public class DashboardScene {
         });
 
         // Add all elements to root
-        root.getChildren().addAll(sideBar, udgbut, logoView, text1, navBar, menuView, text2, text3, searchContainer, undg, grad, fcty, rate, stat, rank, crss, evnt, logoutButton);
+        root.getChildren().addAll(sideBar, udgbut, facbut, logoView, text1, navBar, menuView, text2, text3, searchContainer, undg, grad, fcty, rate, stat, rank, crss, evnt, logoutButton);
     }
 
     public Scene getScene() {
